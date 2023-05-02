@@ -1,0 +1,36 @@
+<html>
+    <style>
+        body{border:green 5px solid}
+        .redbox{border:red 5px solid}
+        .bluebox{border:blue 5px solid}
+        #box1{height:50px}
+        #box2{height:200px}
+        #box3{height:300px}
+        #box4{height:100px}
+        .oneThirdWidth{width:33.33%;float:left;box-sizing: border-box;height:80%}
+        .noMoreFloat{clear:both;float:none} /*to reset the float*/
+    </style>
+    <body> <!--green box-->
+        <div class="redbox" id="box1"> <!--red box-->
+            <div class="bluebox">We're here to...</div>
+            <div class="bluebox"><img src="#" alt="MeowBox"></div>
+        </div>
+        <div class="redbox" id="box2"> <!--red box-->
+A Monthly Cat Subscription....
+        </div>
+        <div class="redbox" id="box3"> <!--red box-->
+            <div class="bluebox">Whats in a meow box</div>
+            <div class="bluebox oneThirdWidth">Cat Toys</div>
+            <div class="bluebox oneThirdWidth">Cat Treats</div>
+            <div class="bluebox oneThirdWidth">A Box!</div>
+            <div class="bluebox noMoreFloat"> <!--reset the float-->
+                <button>Start a sub..</button>
+                <button>Give a box...</button>
+            </div>
+
+        </div>
+        <div class="redbox" id="box4"> <!--red box-->
+One Box Can
+        </div>
+    </body>
+</html>
