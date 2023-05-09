@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab4B</title>
+    <style>
+        * {
+            margin: 2px;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px black solid;
+            text-align: center;
+        }
+
+        body {
+            display: grid;
+            /* align-content: start; */
+            grid-template-columns: 50% auto;
+            grid-template-rows: 25% 70% auto;
+            align-content: center;
+            /* justify-content: center; */
+            /* width:100vw; 
+             height:100vh; */
+         }
+
+        body>div {
+            grid-column:1/3;
+            /* grid-row:1/2; */
+        }
+        main{
+
+        }
+
+        header {
+            background: lightgray;
+
+
+        }
+
+        nav {
+            background: lightblue
+        }
+
+        nav:nth-child(2) {
+            height: 120px
+        }
+
+        section {
+            background: green;
+            grid-column:2/3; /*to swap side with orange*/
+
+  
+        }
+
+        section.orange {
+            background: orange;
+            grid-column:1/2; /*to swap side with orange*/
+            grid-row:2/3; /*force it to come back*/
+
+
+        }
+
+        footer {
+            background: lightgreen;
+            grid-column:1/3;
+            grid-row:3/4;
+
+        }
+
+        p {
+            background: plum
+        }
+
+        p.below {
+
+  
+            /* display: inline-block */
+            /* flex-basis: 50%; */
+            /* width: 0; */
+        }
+
+        article {
+            background: pink;
+        }
+
+        aside {
+            background: yellow;
+   
+
+            /* display: inline-block */
+        }
+        .break-row {
+             flex-basis: 100%;
+              height: 0;
+        }
+        .break-col {
+             flex-basis: 100%;
+              height: 0;
+        }
+        div#pdiv{
+            padding:0;margin:0;border:0;
+            display:grid;
+            grid-template-columns: 50% auto;
+        }
+
+
+        /* when using inline block, all spaces are counted! */
+
+
+        /* https://tobiasahlin.com/blog/flexbox-break-to-new-row/ */
+    </style>
+</head>
+
+<body>
+    <!--cannot have body here or grid will break-->
+    <div>
+        <header>
+            header
+            <nav>nav</nav>
+        </header>
+    </div>
+
+        <section>
+            section
+            <header>
+                header
+            </header>
+            <article>
+                article
+                <header>
+                    header
+                </header>
+                <p>p</p>
+                <div id="pdiv">
+                <p class="below">p</p>
+                
+                <aside>aside</aside>
+                </div>
+                <footer>footer</footer>
+            </article>
+        </section>
+
+        <section class="orange">
+            section
+            <header>
+                header
+            </header>
+            <nav>
+                nav
+            </nav>
+        </section>
+
+    <footer>footer</footer>
+
+</body>
+
+</html>
