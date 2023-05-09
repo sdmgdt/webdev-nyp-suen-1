@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nested Flex</title>
     <style>
         * {
             margin: 0;
@@ -15,66 +15,63 @@
         body {
             width: 100vw;
             height: 100vh;
-            display:flex;
-            flex-wrap:wrap;
-            /* align-items: stretch;  */
-            /* justify-content: center; */
-            /* align-content:baseline; */
-            flex-direction: row;
-            
+            display:flex;          
+            flex-direction: column;
         }
 
         header {
             background-color: red;
-            flex-basis:100%;
+            /* flex-basis:100%; */
             /* height: 100px; */
-            height:20%;
-                    
+            /* height:20%; */
+            flex: 1;
         }
 
         header h1 {
             text-align: center;
             
         }
+        #rowflex{ /*nested flex*/
+            flex:2; /*for flex column above*/
+            display:flex;
+            flex-direction: row; /* by default row, but show to make it clear*/
+
+        }
 
         nav {
             background-color: green;
-            flex-grow:1;
-            height:60%;
-
+            flex:1;
         }
 
         main {
             background-color: cyan;
-            /* flex-basis:50%; */
-            flex-grow:2;
-            height:60%;
+            flex:2;
+
         }
 
         aside {
             background-color: blue;
-            flex-grow:1;
-            height:60%;
-
+            flex:1;
        }
 
         footer {
             background-color: yellow;
-            flex-basis:100%;
-            /* height: 100px; */
-            height:20%;
+            flex:1;
 
-            
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Holy Grail Layout</h1>
+        <h1>Prac04A Nested Flex Example</h1>
     </header>
-    <nav>Nav</nav>
-    <main>Main Content</main>
-    <aside>Aside/Sidebar</aside>
+    <div id="rowflex">
+        <nav>Nav</nav>
+        <main>Main Content</main>
+        <aside>Aside/Sidebar</aside>
+    </div>
     <footer>Footer</footer>
 </body>
 </html>
+
+<!-- https://www.quackit.com/css/flexbox/tutorial/nested_flex_containers.cfm -->
