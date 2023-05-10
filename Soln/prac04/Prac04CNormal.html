@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab4C Solution Normal</title>
+    <title>Prac04c Solution Normal</title>
     <style>
         nav>ul,nav li,footer li{display: inline-block;} 
         button {display:inline-block;background-color:green;color:white;}
         section:nth-of-type(1){padding:10px;background-color: burlywood;}
-        nav>ul,footer>ul{display:flex;justify-content: space-around;} /*for menu bar*/
-        #sect2{padding:10px;display:flex;flex-wrap: wrap;justify-content: space-around;}/*for images*/
-        #sect2>header{flex-basis:100%} /*force header to fill up 100%*/
+        nav>ul,footer>ul{width:100%} /*for menu bar*/
+        #sect2{padding:10px;}/*for images*/
+        #sect2>div{display:inline-block;width:22%} /*force header to fill up 100%*/
         footer{background: green;color:white;padding:5px;text-align: center;}
         #bottomsect{text-align: center;}
         header{text-align: center;}
+        nav>ul>*{width:19%;}
+        footer>ul>li{width:16%}
   
         
         
@@ -25,11 +27,11 @@
     <nav>
         <!-- <b>Branch</b> -->
         <ul>
-            <b>Branch</b>
+            <li><b>Branch</b></li>
             <li>Office Furniture</li>
             <li>Design Services</li>
             <li>Free Installation</li>
-            <button>Build My Office</button>
+            <li><button>Build My Office</button></li>
         </ul>
         <!-- <button>Build My Office</button> -->
     </nav>
@@ -55,6 +57,8 @@
             <li>Fortune</li>
             <li>AXios</li>
             <li>FunittureToday</li>
+            <li>Product Hunt</li>
+            <li>AlleyWatch</li>
         </ul>
 
     </footer>
