@@ -1,0 +1,23 @@
+<style>
+.grid-container {
+  height:100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+	/* grid-template-rows: 100px 200px 300px;  */
+    grid-template-rows:1fr 2fr 3fr;
+    border:5px solid cyan;
+
+}
+#id1{
+    grid-area: 2 / 1 / 4 / 3; 
+    background:red;
+    border:1px solid black;
+}
+ 
+</style>
+
+<div class="grid-container">
+    <div id="id1">
+
+    </div>
+</div>

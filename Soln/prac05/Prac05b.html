@@ -1,0 +1,23 @@
+<style>
+*{border:1px black dotted}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {  height: 100px;   box-sizing: border-box;  padding: 10px;}
+.item1{ background:red;flex:1}
+.item2 {background:green;flex:2}
+.item3 {background:blue;flex:3}
+.item4 {background:yellow;flex:100%} /*force the next element go next line*/
+.item5 {background:magenta;flex:4}
+.item6 {background:cyan;flex:1}
+</style>
+
+<div class="container">
+    <div class="item item1">1 [1 of 3]</div>
+    <div class="item item2">2 [2 of 3]</div>
+    <div class="item item3">3 [2 of 3]</div>
+    <div class="item item4">4 [100%] </div>
+    <div class="item item5">5 [1 of 5]</div>
+    <div class="item item6">6 [4 of 5]</div>
+  </div>
