@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex13a</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* other screen size */
+            background-color: gray;
+        }
+
+        @media screen and (min-width: 480px) {
+
+            /*screen with > 320px*/
+            body {
+                background-color: red;
+            }
+
+            .leftPanel {
+                float: left;
+                width: 100%;
+                background: red;
+            }
+
+            .middlePanel {
+                float: left;
+                width: 100%;
+                background: green;
+            }
+
+            .rightPanel {
+                float: left;
+                width: 100%;
+                background: magenta;
+            }
+
+        }
+
+        @media screen and (min-width: 800px) {
+
+            /*screen with > 720px*/
+            body {
+                background-color: green;
+            }
+
+            .leftPanel {
+
+                width: 50%;
+
+            }
+
+            .middlePanel {
+
+                width: 50%;
+
+            }
+
+            .rightPanel {
+
+                width: 100%;
+
+            }
+        }
+
+        @media screen and (min-width: 1080px) {
+
+            /*screen with > 1080px*/
+            body {
+                background-color: blue;
+            }
+
+            .leftPanel {
+
+                width: 34%;
+
+            }
+
+            .middlePanel {
+
+                width: 33%;
+
+            }
+
+            .rightPanel {
+
+                width: 33%;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftPanel">
+        <p> Education</p>
+    </div>
+    <div class="middlePanel">
+        <p> Hobbies/CCA</p>
+    </div>
+    <div class="rightPanel">
+        <p> Aspirations</p>
+    </div>
+
+</body>
+
+</html>

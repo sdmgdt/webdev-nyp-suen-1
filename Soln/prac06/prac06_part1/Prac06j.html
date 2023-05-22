@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 13J</title>
+    <style>
+        * {
+            background-color: darkslateblue;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            height: 100vh;
+            /* overflow: hidden; */
+            display: grid;
+            grid-template-rows: 40% 25% 35%;
+            grid-gap: 1rem;
+        }
+
+        .box {
+            background-color: dodgerblue;
+            height: 2rem;
+            margin: 0.5rem;
+        }
+        .large {
+            height: 100%;
+        }
+
+        #left {
+            float: left;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #column 
+
+        #right {
+            float: right;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box large"></div>
+    <div id="container">
+        <div id="left">
+            <div class="box"></div>
+            <div class="column">
+                <div class="box large"></div>
+                <div class="box large"></div>
+            </div>
+        </div>
+        <div id="right">
+            <div class="box"></div>
+            <div class="box large"></div>
+        </div>
+    </div>
+    <div id="container2">
+        <div class="box"></div>
+        <div class="column">
+            <div>
+                <div class="box"></div>
+                <div class="box large"></div>
+            </div>
+            <div class="box large"></div>
+        </div>
+    </div>
+</body>
+</html>

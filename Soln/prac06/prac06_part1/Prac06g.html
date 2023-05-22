@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 13H</title>
+    <style>
+        * {
+            background-color: darkslateblue;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .box {
+            background-color: dodgerblue;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 25px;
+        }
+
+        @media screen and (max-width: 768px) {
+            #container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            #container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

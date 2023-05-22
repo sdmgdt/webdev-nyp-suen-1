@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 13I</title>
+    <style>
+        * {
+            background-color: darkslateblue;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box {
+            background-color: dodgerblue;
+            height: 5em;
+            margin: 0.5rem;
+        }
+
+        .large {
+            height: 15em;
+        }
+
+        #container {
+            float: left;
+            width: 60%;
+        }
+        #column {
+            display: flex;
+            flex-direction: row;
+        }
+        #column .box {
+            width: 50%;
+        }
+
+        #container2 {
+            float: right;
+            width: 40%;
+        }
+
+        #rows {
+            margin-top: 10rem;
+            display: flex;
+            flex-direction: column;
+            width: 65%;
+            height: 50%;
+       }
+
+       @media screen and (max-width: 768px) {
+            #container {
+                width: 100%;
+            }
+
+            #container2 {
+                justify-content: center;
+            }
+
+            #rows {
+                width: 100%;
+            }
+       }
+
+       @media screen and (max-width: 480px) {
+            #column {
+                flex-direction: column;
+            }
+            #column .box {
+                width: 100%;
+            }
+
+            #container2 {
+                width: 50%;
+            }
+       }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div id="container">
+        <div class="box large"></div>
+        <div id="column">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <div id="container2">
+        <div class="box"></div>
+        <div class="box large"></div>
+    </div>
+    <div id="rows">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

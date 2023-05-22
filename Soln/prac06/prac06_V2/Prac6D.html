@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
+                background-color: gray;
+            }
+            *{
+                box-sizing: border-box;
+            }
+            .flex{
+                display: flex;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .col{
+                padding: 1rem 2rem;
+                text-align: center;
+                flex-basis: 100%;
+            }
+            
+            #columnA{
+                background-color: cadetblue;    
+            }
+            #columnB{
+                background-color: darkolivegreen;
+            }
+            #columnC{
+                background-color: darkgoldenrod;
+            }
+            #columnD{
+                background-color: palevioletred;
+            }
+
+            @media screen and (min-width:540px) {
+                #columnA{
+                    flex-basis: 50%;
+                }
+                #sub-container{
+                    width: 50%;
+                }
+            }
+            @media screen and (min-width:800px) {
+                #container{
+                    flex-direction: row-reverse;
+                }
+                #columnA, #columnD{
+                    flex-basis: 25%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flex" id="container">
+            <div id="columnA" class="col">Column A</div>
+            <div class="flex" id="sub-container">
+                <div id="columnB" class="col">Column B</div>
+                <div id="columnC" class="col">Column C</div>
+            </div>
+            <div id="columnD" class="col">Column D</div>
+        </div>
+    </body>
+</html>
