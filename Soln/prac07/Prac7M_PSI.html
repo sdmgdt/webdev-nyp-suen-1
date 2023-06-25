@@ -1,0 +1,24 @@
+<script>
+    var psi=prompt("Enter the PSI value");
+    psi=parseInt(psi);
+    if(psi>=0 && psi<=50)
+    {
+        document.write("PSI is "+psi+", Air Quality is Good");
+    }
+    else if(psi<=100)
+    {
+        document.write("PSI is "+psi+", Air Quality is Moderate");
+    }
+    else if(psi<=200)
+    {
+        document.write("PSI is "+psi+", Air Quality is Unhealthy");
+    }
+    else if(psi<=300)
+    {
+        document.write("PSI is "+psi+", Air Quality is Very Unhealthy");
+    }
+    else
+    {
+        document.write("PSI is "+psi+", Air Quality is Hazardous");
+    }
+</script>

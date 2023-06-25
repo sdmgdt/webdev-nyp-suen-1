@@ -1,0 +1,54 @@
+<script>
+    var modName=prompt("Enter module name");
+    var modScore=prompt("Enter module score (out of 100)");
+    var attendance=prompt("Enter module attendance (%)");
+    var grade;
+    if(attendance>70)
+    {
+        if(modScore>=80)
+        {
+            grade="A";
+        }
+        else if(modScore>=75)
+        {
+            grade="B+";
+        }
+        else if(modScore>=70)
+        {
+            grade="B";
+        }
+        else if(modScore>=65)
+        {
+            grade="C+";
+        }
+        else if(modScore>=60)
+        {
+            grade="C";
+        }
+        else if(modScore>=55)
+        {
+            grade="D+";
+        }
+        else if(modScore>=50)
+        {
+            grade="D";
+        }
+        else
+        {
+            grade="F";
+        }
+    }
+    else
+    {
+        if(modScore>=50)
+        {
+            grade="[D] Grade CAP";
+        }
+        else
+        {
+            grade="F";
+        }
+    }
+    
+    document.write("Module Name: "+modName+"<br>Score: "+modScore+"<br>Grade: "+grade+"<br>Attendance: "+attendance+"%");
+</script>

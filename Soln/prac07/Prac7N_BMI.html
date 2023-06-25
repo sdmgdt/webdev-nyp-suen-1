@@ -1,0 +1,27 @@
+<script>
+    var height=prompt("Enter height (m)");
+    var weight=prompt("Enter weight (kg)");
+    var bmi=parseFloat(weight)/(parseFloat(height)*parseFloat(height));
+    bmi=bmi.toFixed(2);
+    if(bmi>=0 && bmi<18.5)
+    {
+        risk="Risk of nutritional deficiency diseases and osteoporosis";
+        rec="Eat more";
+    }
+    else if(bmi<23)
+    {
+        risk="Low risk";
+        rec="You good";
+    }
+    else if(bmi<27.5)
+    {
+        risk="Moderate Risk";
+        rec="Eat less";
+    }
+    else
+    {
+        risk="High Risk";
+        rec="Eat way less";
+    }
+    document.write("Weight: <b>"+weight+" kg</b><br>Height: <b>"+height+" m</b><br>BMI: <b>"+bmi+"</b><br>Risk: <b>"+risk+"</b><br>Recommendations: <b>"+rec+"</b>");
+</script>
