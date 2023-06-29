@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #000;
+}
+
+.wrapper-box {
+  margin: 0 auto;
+  max-width: 1400px;
+  background: #f2f8f0;
+}
+
+h1, h2 {
+  color: blueviolet;
+  font-family: sans-serif;
+}
+
+p {
+  color: cornflowerblue;
+  margin: .5em 1em;
+}
+
+img { /*   or .nursery-box img   */
+  width: 300px;
+  object-fit: contain;
+}
+
+.nursery-box {
+display: flex;
+    margin: 1em 0;
+    padding: 1em;
+    border: 3px solid #00f;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nursery-box > div {
+  flex: 0 1 40%;
+}
+
+/*for last part to use toggle class*/
+.pink{
+  background:pink;
+}

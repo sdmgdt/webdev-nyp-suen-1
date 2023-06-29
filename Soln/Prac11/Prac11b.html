@@ -1,0 +1,77 @@
+<!--teacher's soln for Prac11b Timetable Generator-->
+<body>
+    <header>This is header</header>
+    <div id="wrapper">
+        <div id="timestable">
+            
+        </div>
+        <!-- #wrapper -->
+        <footer>
+            <button>Change Me</button>
+            <p>This is footer</p>
+            <p id="#copy"></p>
+        </footer>
+    </div>
+</body>
+<!--need to create some style-->
+<style> 
+    .boxes-style{
+        width:9%;
+        display:inline-block;
+        text-align: center;
+        margin:0.5%;
+    }
+</style>
+
+<script>
+
+// returns a random integer from start to end-1
+function getRandom(start, end) {
+    return Math.floor(Math.random() * (end-start)+start);
+}
+function getRndCol() { //choose brighter greens
+    let rndCol = 'rgb(' + getRandom(0,255) + ',' + getRandom(50,255) + ',' + getRandom(0,255) + ')';   
+    return rndCol;
+}
+
+function clickedMe(me) {
+    alert(me.currentTarget.innerText); // me return the event
+    //me.currentTarget.backgroundColor.
+
+}
+// create and return a div with style
+function createStyledBox(style, x,y) {
+    let b = document.createElement("div");
+    b.classList.add(style);
+    b.innerHTML = "<p>" + x*y + "</p>"; // should use createElement("p")...
+    //b.addEventListener("click", clickedMe);
+
+    //all button click return different behaviour. no choice but use anonymous function
+    //can explore passing by parameter
+    b.addEventListener("click", function(){ 
+        alert(x+"x"+y+"="+(x*y));
+        //challenge=>on your own: fade the color of the box!
+    });
+    return b;
+}
+// draw num boxes inside a div
+function drawBoxes(selector, num = 10) {
+    let container = document.querySelector(selector);
+    for(let j=1;j<=num;j++)
+        for (let i = 1; i <=num; i++) {
+            let box = createStyledBox("boxes-style", i,j);
+            box.style.background=getRndCol();
+            // append to container
+            container.appendChild(box);
+        }
+}
+drawBoxes("#timestable", 10);
+
+function regeneratebox(){
+    document.querySelector("#timestable").innerHTML="";
+    drawBoxes("#timestable", 10);
+}
+
+document.querySelector("button").addEventListener("click",regeneratebox);
+
+</script>
