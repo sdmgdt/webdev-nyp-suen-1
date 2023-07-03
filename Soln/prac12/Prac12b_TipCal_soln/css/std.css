@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Poppins:wght@300&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+.wrapper-box {
+  max-width: 600px;
+  margin: 2em auto;
+  background: #fff;
+  padding: 2em;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cpy-txt {
+  text-align: center;
+  color: #fff;
+}
+
+#left,
+#right {
+  width: 48%;
+  min-height: 50vh;
+  padding: 1em;
+  border: 1px solid #000;
+}
+
+#left {
+  float: left;
+  border-color: blue;
+}
+
+#right {
+  float: right;
+  border-color: red;
+}
+
+label {
+  font-family: 'Poppins', sans-serif;
+  font-size: .8em;
+  display: block;
+  /* change from inline*/
+
+  color: #422ee0;
+}
+
+input[type="number"] {
+  font-family: 'Poppins', sans-serif;
+  padding: .5em 0em .5em 1em;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+#right p {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 4em;
+  font-weight: 600;
+  color: green;
+  position: relative;
+}
+
+#right p span {
+  color: #a510b9;
+  font-weight: 300;
+  position: absolute;
+  left: 4em;
+  display: block;
+}

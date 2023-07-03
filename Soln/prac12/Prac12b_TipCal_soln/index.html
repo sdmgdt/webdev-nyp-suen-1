@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Basic HTML Document Layout</title>
+  <link rel="stylesheet" href="css/std.css">
+  <script src="js/tips.js" defer></script>
+</head>
+
+<body>
+  <header></header>
+  <div class="wrapper-box clearfix">
+    <div id="left">
+      <form action="#" onsubmit="return false">
+        <label for="bill">Bill Amount</label>
+        <input name="amount" id="bill" value="0.0" type="number" min="0" step="0.01">
+        <label for="people">Number of People</label>
+        <input name="numPeople" id="numPeople" value="1" min="1" type="number">
+        <label for="tip">tips %</label>
+        <input name="tip" id="tip" value="10" type="number" min="0" step="0.01">
+      </form>
+    </div>
+    <div id="right">
+      <p>Total Tips: <span id="ttp">0</span></p>
+      <p>Total Amount: <span id="amt">0</span></p>
+      <p>Amount per person: <span id="app">0</span></p>
+    </div>
+  </div>
+  <footer>
+    <p id="copy" class="white-txt"></p>
+  </footer>
+</body></html>

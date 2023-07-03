@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Basic HTML Document Layout</title>
+  <link rel="stylesheet" href="css/std.css">
+  <script src="js/game.js"></script>
+</head>
+
+<body>
+  <header></header>
+  <div class="wrapper-box clearfix">
+    <p class="score clearfix">
+      <span id="banker"> </span>
+      <span id="drawn"> </span>
+      <span id="player"> </span>
+    </p>
+    <div id="left">
+      <div class="image">
+        <img id="bossImg" src="img/paper.svg">
+      </div>
+    </div>
+    <div id="right">
+      <div class="image">
+        <img id="selectedImg" src="img/blank.svg">
+      </div>
+      <div class="selection ">
+        <a id="scissorIcon"><img src="img/scissor.svg"></a>
+        <a id="paperIcon"><img src="img/paper.svg"></a>
+        <a id="stoneIcon"><img src="img/stone.svg"></a>
+      </div>
+      <button id="restart">reStart</button>
+    </div>
+  </div>
+  <footer>
+    <p id="copy" class="white-txt"></p>
+  </footer>
+</body></html>
