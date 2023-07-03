@@ -93,13 +93,19 @@ function doAnimate() {
     if (getRandom(4) < 2) { // exit 50%
       continue;
     }
+
     box.style.backgroundColor = changeColour();
-    let posL = parseInt(box.style.left);
-    let posT = parseInt(box.style.top);
+
+    // let posL = parseInt(box.style.left);
+    let posL = parseInt(getComputedStyle(box).left);
+    console.log("posL:"+posL);
+    // let posT = parseInt(box.style.top);
+    let posT = parseInt(getComputedStyle(box).top);
+    console.log("posT:"+posT);
     let newL = 10 - getRandom(20);
     let newT = 10 - getRandom(20);
 
-    if (!isNaN(posL)) {
+    if (!isNaN(posL)) { 
       newL += posL;
     }
     box.style.left = newL + "px";
