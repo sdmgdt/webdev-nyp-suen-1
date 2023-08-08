@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 sample</title>
+    <style>
+        .page{width:80vw;height:80vh;border:1px solid red}
+        nav ul li{display:inline;}
+        nav ul{display:block;}
+        #page1{background:red}
+        #page2{background:green}
+        #page3{background:blue}
+
+        /*for responsive menu*/
+        #hamIcon{display:none;}
+        @media screen and (max-width:800px){
+            nav ul li{display:block;} /*make a menu items vertical*/
+            #hamIcon{display: block;} /* unhide menu icon */
+            nav ul{display:none;} /*hide the menu item list*/
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Main Topic</h1>
+    </header>
+    <nav> <!--menu systtm-->
+        <button id="hamIcon">Menu</button>
+        <ul>
+            <li><button id="page1btn">Sub Topic 1</button></li>
+            <li><button id="page2btn">Sub Topic 2</button></li>
+            <li><button id="page3btn">Sub Topic 3</button></li>
+        </ul>
+    </nav>
+    <div id="pagecontainer">
+        <div class="page" id="page1">
+            page 1 content
+        </div>
+        <div class="page" id="page2">
+            page 2 content
+        </div>
+        <div class="page" id="page3">
+            page 3 content
+        </div>
+    </div>
+</body>
+<script>
+//target all elements to save to constants
+const page1btn=document.querySelector("#page1btn");
+const page2btn=document.querySelector("#page2btn");
+const page3btn=document.querySelector("#page3btn");
+var allpages=document.querySelectorAll(".page");
+//select all subtopic pages
+
+console.log(allpages);
+hideall();
+function hideall(){ //function to hide all pages
+    for(let onepage of allpages){ //go through all subtopic pages
+        onepage.style.display="none"; //hide it
+    }
+}
+function show(pgno){ //function to show selected page no
+    hideall();
+    //select the page based on the parameter passed in
+    let onepage=document.querySelector("#page"+pgno);
+    //show the page
+    onepage.style.display="block";
+
+}
+/*Listen for clicks on the buttons, assign anonymous
+eventhandler functions to call show function*/
+page1btn.addEventListener("click", function () { 
+    show(1); 
+});
+page2btn.addEventListener("click", function () { 
+    show(2); 
+});
+page3btn.addEventListener("click", function () {
+    show(3); 
+});
+
+
+
+/*for hamMenu */
+const hamBtn=document.querySelector("#hamIcon");
+hamBtn.addEventListener("click",toggleMenus);
+const menuItemsList=document.querySelector("nav ul");
+
+function toggleMenus(){ /*open and close menu*/
+    if(menuItemsList.style.display=="block")
+        menuItemsList.style.display="none";
+    else menuItemsList.style.display="block";
+}//can optimize using toggle class with css transitions
+</script>
+</html>

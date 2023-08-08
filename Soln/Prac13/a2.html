@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 sample</title>
+    <style>
+        .page{width:80vw;height:80vh;border:1px solid red}
+        nav ul li{display:inline;}
+        #page1{background:red}
+        #page2{background:green}
+        #page3{background:blue}
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Main Topic</h1>
+    </header>
+    <nav> <!--menu systtm-->
+        <ul>
+            <li><button id="page1btn">Sub Topic 1</button></li>
+            <li><button id="page2btn">Sub Topic 2</button></li>
+            <li><button id="page3btn">Sub Topic 3</button></li>
+        </ul>
+    </nav>
+    <div id="pagecontainer">
+        <div class="page" id="page1">
+            page 1 content
+        </div>
+        <div class="page" id="page2">
+            page 2 content
+        </div>
+        <div class="page" id="page3">
+            page 3 content
+        </div>
+    </div>
+</body>
+<script>
+    var allpages=document.querySelectorAll(".page");
+    //select all subtopic pages
+
+    console.log(allpages);
+    hideall();
+    function hideall(){
+        for(onepage of allpages){ //go through all subtopic pages
+            onepage.style.display="none"; //hide it
+        }
+    }
+    function show(pgno){
+        hideall();
+        console.log("activate"+pgno)
+
+        //select the page based on the parameter passed in
+        var onepage=document.querySelector("#page"+pgno);
+
+        //show the page
+        onepage.style.display="block";
+    }
+    page1btn.addEventListener("click",function(){show(1)});
+    page2btn.addEventListener("click",function(){show(2)});
+    page3btn.addEventListener("click",function(){show(3)});
+    
+
+    
+
+</script>
+</html>

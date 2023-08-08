@@ -1,0 +1,69 @@
+<html>
+    <style>
+        #ball{background:blue;width:100px;height:100px;border-radius: 50%;text-align: center;position:relative}
+        #box{width:800px;height:600px;border:solid black 2px}
+    </style>
+
+<body>
+    <div id="box">
+        <div id="ball">B</div>
+    </div>
+    <div id="msg">xy</div>
+    <!-- <button id="leftButt">left</button>
+    <button id="rightButt">right</button>
+    <button id="upButt">up</button>
+    <button id="downButt">down</button> -->
+</body>
+<script>
+var ballx=bally=0;
+box=document.querySelector("#box");
+console.log(box.offsetWidth);
+console.log(ball.offsetWidth);
+maxX=box.offsetWidth-ball.offsetWidth;
+maxY=box.offsetHeight-ball.offsetHeight;
+var velx=RandomRange(1,5);
+var vely=RandomRange(1,5);
+
+function move(xd,yd){
+    ballx+=xd;
+    bally+=yd
+    //alert(xd+","+yd);
+    ball.style.left=ballx;
+    ball.style.top=bally;
+    if(ballx>maxX){
+        velx=-velx;
+        ballx=maxX;
+        ball.classList.add("ballAnim");
+    }   
+    if(bally>maxY){
+        vely=-vely;
+        bally=maxY;
+    }
+    if(ballx<0){
+        velx=-velx;
+        ballx=0;
+    }   
+    if(bally<0){
+        vely=-vely;
+        bally=0;
+    }
+    msg.innerText=ballx+","+bally;
+
+}
+function timedmove(){
+    move(velx,vely);
+}
+// leftButt.addEventListener("click",function(){move(-10,0)});
+// rightButt.addEventListener("click",function(){move(+10,0)});
+// upButt.addEventListener("click",function(){move(0,-10)});
+// downButt.addEventListener("click",function(){move(0,+10)});
+
+function RandomRange(min,max){
+    return Math.round(Math.random()*(max-min)+min);
+}
+
+setInterval(timedmove,10);
+
+</script>
+
+</html>

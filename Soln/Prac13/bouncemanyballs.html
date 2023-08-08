@@ -1,0 +1,142 @@
+<html>
+    <style>
+        .ball{background:blue;width:50px;height:50px;border-radius: 50%;text-align: center;position:absolute}
+        #box{width:800px;height:800px;border:solid black 2px;position:relative}
+    </style>
+
+<body>
+    <h1>Bouncing balls eample</h1>
+    <div id="box">
+
+    </div>
+    <div id="msg">xy</div>
+    <button id="AddBtn">Add</button>
+    <button id="rightButt">right</button>
+    <button id="upButt">Start</button>
+    <button id="downButt">Stop</button>
+</body>
+<script>
+    class Ball{
+        colors=["red","green","blue","orange","cyan"];
+        div;
+        ball;
+        RandomRange=function(min,max){
+           return Math.round(Math.random()*(max-min)+min);
+        }
+        constructor(count){
+            this.ballx=this.bally=0;    
+            this.velx = this.RandomRange(-15, 15);
+            this.vely = this.RandomRange(-15, 15);
+            this.box = document.querySelector("#box");
+            //this.ball=document.querySelector("#ball");
+            this.ball=document.createElement("div");
+            this.box.appendChild(this.ball);
+            //this.div
+            this.ball.className="ball";
+            this.ball.innerText=count;
+            this.maxX = this.box.offsetWidth - this.ball.offsetWidth;
+            this.maxY = this.box.offsetHeight - this.ball.offsetHeight;
+            console.log(this.maxX,this.maxY,this.velx,this.vely);
+            this.ball.style.background=this.colors[this.RandomRange(0,this.colors.length)];
+            this.ballx=this.RandomRange(0,this.maxX);
+            this.bally=this.RandomRange(0,this.maxY);
+            this.ball.addEventListener("click",hitevent);
+  
+            //console.log(this.ball);
+
+
+
+        }
+    
+        MoveBall() {
+            this.ballx += this.velx;
+            this.bally += this.vely
+            //alert(xd+","+yd);
+            this.ball.style.left = this.ballx;
+            this.ball.style.top = this.bally;
+            if (this.ballx > this.maxX) {
+                this.velx = -this.velx;
+                this.ballx = this.maxX;
+            }
+            if (this.bally > this.maxY) {
+                this.vely = -this.vely;
+                this.bally = this.maxY;
+            }
+            if (this.ballx < 0) {
+                this.velx = -this.velx;
+                this.ballx = 0;
+            }
+            if (this.bally < 0) {
+                this.vely = -this.vely;
+                this.bally = 0;
+            }
+            //msg.innerText = this.ballx + "," + this.bally;
+            return 0;
+
+        }
+        eventlist(e){
+            alert(e.target.innerText);
+        }
+
+
+    }
+
+// leftButt.addEventListener("click",function(){box.);
+// rightButt.addEventListener("click",function(){move(+10,0)});
+// upButt.addEventListener("click",function(){move(0,-10)});
+// downButt.addEventListener("click",function(){move(0,+10)});
+var ballarray=[];
+var totalballs=10;
+var score=0;
+for(i=0;i<totalballs;i++){
+    ballarray[i]=new Ball(i);
+
+}
+var  aniloop;
+function dothis(){
+    for(i=0;i<ballarray.length;i++){
+        console.log(i+":"+ballarray[i].ball.innerText);
+       ballarray[i].MoveBall();
+    
+    }
+}
+downButt.addEventListener("click",stopall);
+upButt.addEventListener("click",startall);
+
+function startall(){
+    if(!aniloop)aniloop=setInterval(dothis,50);
+}
+function stopall(){
+    clearInterval(aniloop);
+    aniloop=null;
+}
+function hitevent(e){
+    if(event.target.className=="ball"){
+        //alert(e.target.innerText);
+        score+=parseInt(e.target.innerText);
+        msg.innerText = "Score:"+score;
+        e.target.remove();
+        console.log(ballarray.length);
+        
+        aud.play();
+
+
+    }
+    
+}
+var aud=new Audio("bounce.mp3");
+
+
+function addball(){
+    console.log("ball adding");
+    ballarray.push(new Ball(ballarray.length));
+}
+
+AddBtn.addEventListener("click",addball);
+
+
+
+
+</script>
+
+</html>

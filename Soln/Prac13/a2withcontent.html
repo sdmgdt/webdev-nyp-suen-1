@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 sample</title>
+    <style>
+        .page{width:80vw;height:80vh;border:1px solid red}
+        nav ul li{display:inline;}
+        .ball{background:blue;width:50px;height:50px;border-radius:50%;position:relative;left:0px;top:0px;}
+        #ball1{position:relative;left:10px;top:20px;}
+    </style>
+    
+</head>
+<body>
+    <nav> <!--menu systtm-->
+        <ul>
+            <li><button id="page1btn">Page1</button></li>
+            <li><button id="page2btn">Page2</button></li>
+            <li><button id="page3btn">Page3</button></li>
+        </ul>
+    </nav>
+    <div id="pagecontainer">
+    <div class="page" id="page1">
+page 1 content
+        <div class="ball" id="ball1"></div>
+        
+
+    </div>
+    <div class="page" id="page2">
+page 2 content
+    </div>
+    <div class="page" id="page3">
+page 3 content
+    </div>
+</div>
+</body>
+<script>
+    var allpages=document.querySelectorAll(".page");
+    console.log(allpages);
+    hideall();
+    function hideall(){
+        for(onepage of allpages){
+            onepage.style.display="none";
+        }
+    }
+    function show(pgno){
+        hideall();
+        console.log("activate"+pgno)
+        var onepage=document.querySelector("#page"+pgno);
+        onepage.style.display="block";
+
+    }
+    page1btn.addEventListener("click",function(){show(1)});
+    page2btn.addEventListener("click",function(){show(2)});
+    page3btn.addEventListener("click",function(){show(3)});
+    document.addEventListener('keyup', (e) => {
+        console.log(e);
+        if (e.code === "ArrowRight"){
+            ball1=document.querySelector(".ball");
+            csty=getComputedStyle(ball1);
+            console.log(parseInt(csty.left));
+            ball1.style.left=parseInt(csty.left)+10+"px";
+
+        } if (e.code === "ArrowLeft"){
+            ball1=document.querySelector(".ball");
+
+            csty=getComputedStyle(ball1);
+            console.log(parseInt(csty.left));
+            ball1.style.left=parseInt(csty.left)-10+"px";
+
+        }        
+    if (e.code === "ArrowDown"){
+            ball1=document.querySelector(".ball");
+            csty=getComputedStyle(ball1);
+            console.log(parseInt(csty.top));
+            ball1.style.top=parseInt(csty.top)+10+"px";
+
+        }
+        if (e.code === "ArrowUp"){
+            ball1=document.querySelector(".ball");
+            csty=getComputedStyle(ball1);
+            console.log(parseInt(csty.top));
+            ball1.style.top=parseInt(csty.top)-10+"px";
+
+        }
+        
+    });
+
+    
+
+</script>
+</html>
